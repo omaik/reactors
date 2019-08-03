@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 RSpec.describe Api::V1::HellosController, type: :controller do
 
   describe '#index' do
