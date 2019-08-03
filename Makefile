@@ -22,3 +22,6 @@ test:
 
 rm:
 	ENV=$(ENV) docker-compose rm
+
+attach:
+	docker attach $(shell docker ps -qf "name=reactors_api")
