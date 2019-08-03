@@ -1,0 +1,37 @@
+version: '3'
+services:
+  db:
+    image: postgres
+    volumes:
+      - reactors_pg:/var/lib/postgresql/data
+  api:
+    build: .
+    command: bash -c "./docker/run.sh"
+    volumes:
+      - reactors_be:/reactors/src
+    ports:
+      - "3000:3000"
+    env_file:
+      - ./docker/${ENV}.env
+    depends_on:
+      - db
+    tty: true
+    stdin_open: true
+  web:
+    build: reactors_fe/
+    command: npm start
+    volumes:
+      - reactors_fe:/app
+    ports:
+      - "4000:4000"
+    env_file:
+      - ./reactors_fe/docker/${ENV}.env
+    depends_on:
+      - api
+
+volumes:
+  reactors_pg: {}
+  reactors_be:
+    external: true
+  reactors_fe:
+    external: true
