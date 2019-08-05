@@ -6,8 +6,6 @@ prepare:
 	ENV=$(ENV) docker-compose build
 	bundle
 	ENV=$(ENV) docker-compose run api bash -c "docker/migrate.sh"
-
-prepare-test:
 	ENV=test docker-compose run api bash -c "docker/migrate.sh"
 
 start:
