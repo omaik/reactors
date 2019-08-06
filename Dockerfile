@@ -5,7 +5,7 @@ WORKDIR /reactors/src
 ADD Gemfile* /reactors/src/
 RUN gem install bundler
 
-ENV BUNDLE_PATH=vendor/bundle
+ENV BUNDLE_PATH=/bundle
 RUN bundle install --jobs=4
 
 ADD . /reactors/src
