@@ -1,11 +1,11 @@
 class ApplicationController < ActionController::Base
-	protect_from_forgery with: :null_session
+  protect_from_forgery with: :null_session
   respond_to :json
-	before_action :authenticate_user
+  before_action :authenticate_user
 
-	private
+  private
 
-	def authenticate_user
+  def authenticate_user
     if request.headers['Authorization'].present?
       authenticate_or_request_with_http_token do |token|
         begin

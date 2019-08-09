@@ -1,6 +1,6 @@
 module Api
   module V1
-  	class RegistrationsController < Devise::RegistrationsController
-		end
-	end
+    class RegistrationsController < Devise::RegistrationsController
+    end
+  end
 end
