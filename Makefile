@@ -10,7 +10,7 @@ prepare:
 
 
 start:
-	ENV=$(ENV) docker-compose up -d
+	ENV=$(ENV) docker-compose up
 
 image:
 	ENV=$(ENV) docker-compose build
@@ -24,3 +24,6 @@ rm:
 
 attach:
 	docker attach $(shell docker ps -qf "name=reactors_api")
+
+stop:
+	ENV=$(ENV) docker-compose stop
