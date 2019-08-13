@@ -9,6 +9,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'pg'
 gem 'rack-cors'
+gem 'minio-ruby'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
