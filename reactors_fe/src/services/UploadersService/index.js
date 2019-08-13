@@ -8,5 +8,5 @@ export const FileUpload = (file) =>{
       'content-type': 'multipart/form-data'
     }
   }
-  return post('/api/v1/upload', formData, config)
+  return post('/api/v1/uploads', formData, config)
 };
