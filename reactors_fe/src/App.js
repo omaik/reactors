@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
-import HellosComponent from './components/HellosComponent'
-import UploadersComponent from './components/UploadersComponent'
-import ShowUploads from './components/ShowUploads'
+import HellosComponent from './components/HellosComponent';
+import UploadersComponent from './components/UploadersComponent';
+import VideosComponent from './components/VideosComponent';
+// import ShowUploads from './components/ShowUploads'
 
 class App extends Component {
 
@@ -10,10 +11,10 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h3>Hello, world!</h3>
+          <h2>Hello, world!</h2>
           <HellosComponent/>
           <UploadersComponent/>
-          <ShowUploads/>
+          <VideosComponent/>
         </header>
       </div>
     );

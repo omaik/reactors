@@ -7,6 +7,7 @@ module Api
         render json: @uploads.map do |upload|
           upload.as_json.merge({ video: url_for(upload.video)})
         end
+        # render :index
       end
 
       def show
