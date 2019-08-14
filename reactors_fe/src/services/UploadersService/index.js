@@ -2,7 +2,7 @@ import  { post }  from '../../api/request'
 
 export const FileUpload = (file) =>{
   const formData = new FormData();
-  formData.append('file',file)
+  formData.append('video',file)
   const config = {
     headers: {
       'content-type': 'multipart/form-data'

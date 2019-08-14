@@ -1,3 +1,3 @@
 class Upload < ApplicationRecord
-  has_one_attached :attachment
+  has_one_attached :video
 end

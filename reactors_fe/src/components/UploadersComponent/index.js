@@ -4,20 +4,20 @@ import { FileUpload } from '../../services/UploadersService'
 class UploadersComponent extends Component {
   constructor(props) {
     super(props);
-    this.state = { attachment: null };
+    this.state = { upload: null };
     this.onFormSubmit = this.onFormSubmit.bind(this)
     this.onChange = this.onChange.bind(this)
   }
 
   onFormSubmit(e) {
     e.preventDefault();
-    FileUpload(this.state.attachment).then((response) => {
+    FileUpload(this.state.upload).then((response) => {
       console.log(response.data);
     })
   }
 
   onChange(e) {
-    this.setState({ attachment: e.target.files[0] })
+    this.setState({ upload: e.target.files[0] })
   }
 
   render() {

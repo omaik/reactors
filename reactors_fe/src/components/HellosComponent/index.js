@@ -24,7 +24,7 @@ class HellosComponent extends Component {
   }
 
   render() {
-    return (
+    return(
       <div>
         {this.renderAllHellos()}
       </div>
