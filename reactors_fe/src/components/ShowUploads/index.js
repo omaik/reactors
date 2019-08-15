@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { ShowService } from '../../services/ShowService'
+import { IndexService } from '../../services/ShowService'
+import { Image } from '../../services/ShowService'
 
 class ShowUploads extends Component {
   constructor(props){
@@ -8,14 +9,17 @@ class ShowUploads extends Component {
   };
 
   componentDidMount() {
-    ShowService().then(response => { this.setState({uploads: response.data.uploads}) }) 
+    IndexService().then(
+      response => { this.setState({uploads: response.data.uploads}) })
     .catch(error => console.log(error))
   }
-//
+// {this.props.uploads.map(upload => {
+  // <div key={upload.id}>{upload.url_for}</div>
+// })}
   renderIndexUploads = () => {
     console.log(this.state.uploads);
     return(
-      <img alt="" src={this.props.uploads} />
+      <Image/>
     )
   }
 
@@ -27,5 +31,4 @@ class ShowUploads extends Component {
     )
   }
 }
-
 export default ShowUploads

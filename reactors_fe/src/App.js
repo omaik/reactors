@@ -3,7 +3,7 @@ import './App.css';
 import HellosComponent from './components/HellosComponent';
 import UploadersComponent from './components/UploadersComponent';
 import VideosComponent from './components/VideosComponent';
-// import ShowUploads from './components/ShowUploads'
+import ShowUploads from './components/ShowUploads'
 
 class App extends Component {
 
@@ -14,6 +14,7 @@ class App extends Component {
           <h2>Hello, world!</h2>
           <HellosComponent/>
           <UploadersComponent/>
+          <ShowUploads/>
           <VideosComponent/>
         </header>
       </div>

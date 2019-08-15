@@ -3,22 +3,14 @@ module Api
     class UploadsController < ApplicationController
       def index
         @uploads = Upload.all
-        # render json: @uploads.with_attached_video
-        render json: @uploads.map do |upload|
-          upload.as_json.merge({ video: url_for(upload.video)})
-        end
-        # render :index
+        # byebug
+        # render json: @uploads.map { |upload| upload_json(upload) }, methods: :video_url
       end
 
       def show
         @upload = Upload.find(params[:id])
-        upload_json = {
-          "name" => @upload.name,
-          "description" => @upload.description,
-          "video" => url_for(@upload.video)
-        }
-
-        render json: upload_json
+        # render :show
+        render json: upload_json(@upload)
       end
 
       def create
@@ -39,6 +31,11 @@ module Api
       def uploads_params
         params.permit(:name, :description, :video)
       end
+
+      def upload_json(upload)
+        upload.as_json.merge({ video: url_for(upload.video)})
+      end
+
     end
   end
 end
